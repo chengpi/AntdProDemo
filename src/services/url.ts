@@ -5,7 +5,7 @@ import { request } from '@umijs/max';
 const isDev = process.env.NODE_ENV === 'development';
 
 export const getUrl = (path: string) => {
-  console.log(PROXY_ENV, API_HOST);
+  // console.log(PROXY_ENV, API_HOST);
   const isProxy = PROXY_ENV === 'true';
   return isDev && isProxy ? path : API_HOST + path;
 };

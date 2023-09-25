@@ -33,7 +33,7 @@ export default function ConnectProvider({ children }: PropsWithChildren) {
       return;
     }
     const currentUser = await fetchUserInfo(uid, token);
-    console.log('用户数据', currentUser, location.pathname);
+    // console.log('用户数据', currentUser, location.pathname);
 
     if (location.pathname !== loginPath) {
       if (!currentUser) {

@@ -108,18 +108,18 @@ const Login: React.FC = () => {
 
   const intl = useIntl();
 
-  const fetchUserInfo = async (uid?: string | number) => {
-    const userInfo = await initialState?.fetchUserInfo?.(uid);
-    if (userInfo) {
-      flushSync(() => {
-        // setInitialState((s: any) => ({
-        //   ...s,
-        //   currentUser: userInfo,
-        // }));
-        dispatch(setUser({ ...userInfo }));
-      });
-    }
-  };
+  // const fetchUserInfo = async (uid?: string | number) => {
+  //   const userInfo = await initialState?.fetchUserInfo?.(uid);
+  //   if (userInfo) {
+  //     flushSync(() => {
+  //       // setInitialState((s: any) => ({
+  //       //   ...s,
+  //       //   currentUser: userInfo,
+  //       // }));
+  //       dispatch(setUser({ ...userInfo }));
+  //     });
+  //   }
+  // };
 
   const handleSubmit = async (values: API.LoginParams) => {
     try {
