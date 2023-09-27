@@ -2,7 +2,7 @@ import Footer from '@/components/Footer';
 import { Question, SelectLang } from '@/components/RightContent';
 import { LinkOutlined } from '@ant-design/icons';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
-import { SettingDrawer } from '@ant-design/pro-components';
+import { PageLoading, SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
 import { history, Link } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
@@ -127,12 +127,13 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     // 增加一个 loading 的状态
     childrenRender: (children) => {
       // if (initialState?.loading) return <PageLoading />;
+      // if (!user) return <PageLoading />;
       return (
-        <QueryClientProvider client={queryClient}>
-          <Provider store={store}>
-            {/* @ts-ignore */}
-            <PersistGate loading={null} persistor={persistStore(store)}>
-              <ConnectProvider>
+        //最好不要在这里加provider，会导致子路由加载页面出现卡顿，最好在layouts/index.tsx里配置。
+        // <QueryClientProvider client={queryClient}>
+          // <Provider store={store}>
+            // <PersistGate loading={null} persistor={persistStore(store)}>
+              // <ConnectProvider>
                 <>
                   {children}
                   <SettingDrawer
@@ -147,10 +148,10 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
                     }}
                   />
                 </>
-              </ConnectProvider>
-            </PersistGate>
-          </Provider>
-        </QueryClientProvider>
+              // </ConnectProvider>
+            // </PersistGate>
+          // </Provider>
+        // </QueryClientProvider>
       );
     },
     ...initialState?.settings,

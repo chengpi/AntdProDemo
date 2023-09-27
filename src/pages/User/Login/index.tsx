@@ -139,8 +139,8 @@ const Login: React.FC = () => {
 
       // await sleep(500);
       // await fetchUserInfo(res?.data?.uid);
-      const urlParams = new URL(window.location.href).searchParams;
-      history.push(urlParams.get('redirect') || '/');
+      // const urlParams = new URL(window.location.href).searchParams;
+      // history.push(urlParams.get('redirect') || '/');
       // 登录
       // const msg = await login({ ...values, type });
       // if (msg.status === 'ok') {

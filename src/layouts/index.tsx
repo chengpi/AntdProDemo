@@ -7,16 +7,19 @@ import { store } from '@/state';
 import ConnectProvider from '@/components/Provider/ConnectProvider';
 const queryClient = new QueryClient();
 
-const layout = ({ children }: any) => (
-  <QueryClientProvider client={queryClient}>
-    <Provider store={store}>
-      {/* @ts-ignore */}
-      <PersistGate loading={null} persistor={persistStore(store)}>
-        <ConnectProvider>
-          <Outlet />
-        </ConnectProvider>
-      </PersistGate>
-    </Provider>
-  </QueryClientProvider>
-);
+const layout = ({ children }: any) => {
+  // console.log('layout加载')
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        {/* @ts-ignore */}
+        <PersistGate loading={null} persistor={persistStore(store)}>
+          <ConnectProvider>
+            <Outlet />
+          </ConnectProvider>
+        </PersistGate>
+      </Provider>
+    </QueryClientProvider>
+  );
+};
 export default layout;

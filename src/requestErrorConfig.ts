@@ -130,7 +130,7 @@ export const errorConfig: RequestConfig = {
         //     }),
         //   }),
         // );
-        history.push('/user/login');
+        // history.push('/user/login');
       }
       return response;
     },

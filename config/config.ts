@@ -81,6 +81,7 @@ export default defineConfig({
     locale: true,
     ...defaultSettings,
   },
+  // layout: false,
   /**
    * @name moment2dayjs 插件
    * @description 将项目中的 moment 替换为 dayjs
