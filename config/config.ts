@@ -5,7 +5,7 @@ import defaultSettings from './defaultSettings';
 import proxy from './proxy';
 import routes from './routes';
 
-const { REACT_APP_ENV = 'dev', PROXY_ENV, API_HOST } = process.env;
+const { REACT_APP_ENV = 'dev', PROXY_ENV, API_HOST, API_HOST_0 } = process.env;
 
 export default defineConfig({
   /**
@@ -157,6 +157,7 @@ export default defineConfig({
     REACT_APP_ENV: REACT_APP_ENV || false,
     PROXY_ENV: PROXY_ENV,
     API_HOST: API_HOST,
+    API_HOST_0: API_HOST_0,
   },
   favicons: ['/logo.svg'],
 });
